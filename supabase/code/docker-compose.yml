@@ -426,7 +426,7 @@ services:
       timeout: 5s
       retries: 10
     depends_on:
-      vector:
+      :
         condition: service_healthy
     environment:
       POSTGRES_HOST: /var/run/postgresql
@@ -449,7 +449,7 @@ services:
 
   vector:
     container_name: supabase-vector
-    image: timberio/vector:nightly-alpine
+    image: timberio/vector:X.X.X-alpine
     restart: unless-stopped
     volumes:
       - ./volumes/logs/vector.yml:/etc/vector/vector.yml:ro,z
